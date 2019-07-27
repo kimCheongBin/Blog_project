@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+{% load static %}
+<body style="background-color: yellowgreen;">
+    <div class = "container" style = "padding-top: 50px;">
+        <div class="card">
+            {% for blog in posts %}
+            <div class="card-header">
+                <h3> 제목: {{blog.title}} </h3>
+            </div>
+            <div class="card-body">
+                    <p> 날짜: {{blog.pub_date}} </p>
+                    <p> 본문 미리보기: {{blog.summary}}</p><br>
+                <a href="{%url 'detail' blog.id%}" style ="color: black; text-decoration: none; box-shadow: 0 -6px  yellowgreen inset;">MORE !</a>
+            </div><br><br>
+            {%endfor%}
+        </div>
+        <div style="display: flex;">
+            {#first previous next last#}
+
+            {%if posts.has_previous%}
+            <a href="?page=1">First</a>
+            <a href="?page={{posts.previous_page_number}}">Previous</a>
+            {%endif%}
+    
+            <span>{{posts.number}}</span>
+            <span>of</span>
+            <span>{{posts.paginator.num_pages}}</span>
+    
+            {%if posts.has_next%}
+            <a href="?page={{posts.next_page_number}}">Next</a>
+            <a href="?page={{posts.paginator.num_pages}}">Last</a>
+            {%endif%}
+            <br><br>
+        </div>
+    </div>
+</body>
+{% endblock %}

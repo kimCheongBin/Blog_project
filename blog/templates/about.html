@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+{% load staticfiles %}
+
+<body style="background-color: yellowgreen;">
+    <br><br>
+  <div class="container" style="background-color: white; padding: 20px;">
+    <div class="row">
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="{% static 'photo2.jpg' %}" class="card-img-top" alt="고양이 사진">
+          <div class="card-body">
+            <p class="card-text" style="font-family: 'OTEnjoystoriesBA'; font-size: 28px; text-decoration: underline;">망고 스틴 (수컷)</p>
+            <p class="card-text"  style=" font-family: 'Handon3gyeopsal600g'">안녕하세요 고양이입니다. <br> 만나서 반갑습니다. 요즘 너무 더워서 힘들어요... 이제 그만 더웠으면... 멋쟁이 사자처럼 좋아요.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col" style=" font-family: 'Handon3gyeopsal600g'">
+          <div class="card" style="width: 48rem;">
+              <div class="card-header" style="font-family: 'OTEnjoystoriesBA'; font-size: 28px;">
+                냥냥 특징
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">먹는 것을 좋아함 </li>
+                <li class="list-group-item">멍 때리기 좋아함</li>
+                <li class="list-group-item">여름 싫어함</li>
+                <li class="list-group-item">러시안 왕자님 ♥</li>
+              </ul>
+          </div>
+          <br><br>
+          <div class="card" style="width: 48rem;">
+              <div class="card-header"style="font-family: 'OTEnjoystoriesBA'; font-size: 28px;">
+                냥냥 신상
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">주소: 대한민국 거주</li>
+                <li class="list-group-item">가족: 주인</li>
+                <li class="list-group-item">나이: 3살</li>
+                <li class="list-group-item">혹시 수원에서 망고 냥냥이를 보면?: 가까운 동물병원에 데려다 주세요!</li>
+              </ul>
+          </div>
+      </div>
+    </div>
+    </div> 
+</body>
+
+{% endblock %}
